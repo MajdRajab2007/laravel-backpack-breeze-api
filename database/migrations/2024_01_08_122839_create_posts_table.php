@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('body');
             $table->text('review');
             $table->string('image')->nullable();
-            $table->foreignIdFor('tag');
+            $table->foreignId('tag_name')->nullable();
             $table->foreignId('coding_language_name')->nullable();
             $table->foreignId('design_type_name')->nullable();
 

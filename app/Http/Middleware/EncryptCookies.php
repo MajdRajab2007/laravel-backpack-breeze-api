@@ -2,16 +2,30 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Cookie\Middleware\EncryptCookies as Middleware;
+use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
-class EncryptCookies extends Middleware
+class EncryptCookies
 {
     /**
-     * The names of the cookies that should not be encrypted.
+     * Handle an incoming request.
      *
-     * @var array<int, string>
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @return mixed
      */
-    protected $except = [
-        //
-    ];
+    public function handle(Request $request, Closure $next)
+    {
+        // Perform any logic before sending the response
+
+        // Continue processing the request
+        $response = $next($request);
+
+        // Set cookies on the response
+        $response->cookie('adham-cookie', 'cookie_adham');
+
+        // Return the response with cookies set
+        return $response;
+    }
 }
