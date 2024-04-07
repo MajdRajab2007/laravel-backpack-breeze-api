@@ -25,7 +25,12 @@ class Posts extends Model
     ];
     use CrudTrait;
     use HasFactory;
-    
+    public function __construct()
+    {
+        $id = $this->tag_name;
+        $tag = Tag::find($id);
+        $this->tag_name = $tag;
+    }
     public function coding_language(){
         return $this->belongsTo(CodingLanguage::class);
     }

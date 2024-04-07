@@ -4,6 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\CodingLanguage;
+use App\Models\Tag;
 return new class extends Migration
 {
     /**
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->text('body');
             $table->text('review');
             $table->string('image')->nullable();
-            $table->foreignId('tag_name');
+            $table->foreignIdFor('tag');
             $table->foreignId('coding_language_name')->nullable();
             $table->foreignId('design_type_name')->nullable();
 
