@@ -1,0 +1,2 @@
+Here the Default path to Programming is /blog.
+so the folder (pages) to make the project organized.
