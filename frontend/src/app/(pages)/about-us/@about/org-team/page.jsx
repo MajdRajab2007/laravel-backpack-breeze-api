@@ -3,13 +3,12 @@ import Link from 'next/link'
 import 'react-slideshow-image/dist/styles.css'
 import Image from 'next/image'
 import { webTeam } from './data';
-import { Slide } from 'react-slideshow-image';
 import SliderCLi from './SliderCLi'
 import Loading from '@/app/loading';
 
 
 
-const MediaTeam = () => {
+const OrgTeam = () => {
   return (
     <div className='dark:bg-darkbg pt-5'>
         <ul className='grid grid-cols-2 border-2 border-bluePrime md:grid-cols-4 gap-x-6 bg-bluePrime rounded-3xl justify-center w-[70%] m-auto'>
@@ -42,7 +41,7 @@ const MediaTeam = () => {
                 )
            })}
            </SliderCLi>
-           
+
         </div>
 
         <div className='pt-12 md:hidden flex flex-col justify-center items-center gap-y-5'>
@@ -59,9 +58,9 @@ const MediaTeam = () => {
            })}
         </div>
        </Suspense>
-      
+
     </div>
   )
 }
 
-export default MediaTeam
+export default OrgTeam

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import 'react-slideshow-image/dist/styles.css'
 import Image from 'next/image'
 import { webTeam } from './data';
-import { Slide } from 'react-slideshow-image';
 import SliderCLi from './SliderCLi'
 import Loading from '@/app/loading';
 
@@ -42,7 +41,7 @@ const MediaTeam = () => {
                 )
            })}
            </SliderCLi>
-           
+
         </div>
 
         <div className='pt-12 md:hidden flex flex-col justify-center items-center gap-y-5'>
@@ -59,7 +58,7 @@ const MediaTeam = () => {
            })}
         </div>
       </Suspense>
-      
+
     </div>
   )
 }

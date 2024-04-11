@@ -33,19 +33,19 @@ const VidAndDes = () => {
 
             <div className='mt-8 grid grid-cols-2 justify-center items-center gap-x-4 md:gap-x-0 gap-y-8 px-6'>
 
-                <Link href={"/"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold 
+                <Link href={"/blog/ve-and-design/graphic-design"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
                                  bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
                                 Graphic Design
                 </Link>
-                <Link href={"/"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold 
+                <Link href={"/blog/ve-and-design/ui-ux"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
                                  bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
                                 UI UX Design
                 </Link>
-                <Link href={"/"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold 
+                <Link href={"/blog/ve-and-design/montage"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
                                  bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
                                 Montage
                 </Link>
-                <Link href={"/"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold 
+                <Link href={"/blog/ve-and-design/motion-graphic"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
                                  bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
                                 Motion Graphic
                 </Link>

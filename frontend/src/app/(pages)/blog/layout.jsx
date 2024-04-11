@@ -6,10 +6,10 @@ const layout = ({children}) => {
   return (
 <>
       <Navbar />
-<div className='dark:bg-darkbg'>
+<div className='dark:bg-darkbg '>
       {children}
-      
-      <Footer fixed="fixed"/>
+
+      <Footer fixed="relative bottom-[-170px] md:static"/>
     </div>
 </>
   )

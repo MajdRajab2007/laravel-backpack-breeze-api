@@ -1,22 +1,17 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title inertia>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @routes
-        @viteReactRefresh
-        @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
-        @inertiaHead
-    </head>
-    <body class="font-sans antialiased">
-        @inertia
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form method='POST' action='http://127.0.0.1:8000/register' className='bg-red-500 text-bluePrime font-bold flex flex-col gap-5'>
+    @csrf
+    <input  type="text" name='name' placeholder="Name" />
+        <input  type="email" name='email'  placeholder="Email" />
+        <input  type="password" name='password' placeholder="Password" />
+        <button type="submit" className='p-8 bg-black text-white'>Register</button>
+    </form>
+</body>
 </html>

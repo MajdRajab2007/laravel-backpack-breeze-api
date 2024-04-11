@@ -33,19 +33,19 @@ const Blog = () => {
 
      <div className='mt-8 grid grid-cols-2 justify-center items-center gap-x-4 md:gap-x-0 gap-y-8 px-6'>
 
-            <Link href={"/"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold 
+            <Link href={"/blog/programming/front-end"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
                             bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
                             Front-End
             </Link>
-            <Link href={"/"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold 
+            <Link href={"/blog/programming/back-end"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
                             bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
                             Back-End
             </Link>
-            <Link href={"/"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold 
+            <Link href={"/blog/programming/programming-basics"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
                             bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
                             Programming Basics
             </Link>
-            <Link href={"/"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold 
+            <Link href={"/blog/programming/competitive-programming"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
                             bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
                             Competitive Programming
             </Link>

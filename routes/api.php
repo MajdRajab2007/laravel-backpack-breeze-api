@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,10 +27,28 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('users/{email}', function (Request $request)
+    {
+        $user = User::where('email', $request->email)->first();
 
+        if ($user) {
+            return response()->json([
+                'status' => true,
+                'message' => 'User found successfully.',
+                'data' => $user
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'User not found.',
+            ]);
+        }
+    }
+
+);
 Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('guest')
                 ->name('register');
+                // ->middleware('cors')
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest')
