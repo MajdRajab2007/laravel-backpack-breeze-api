@@ -8,14 +8,14 @@ const Register = () => {
             <div className="w-[80%] relative top-[15%] md:top-[10%] md:right-[1%]">
             <form className="flex flex-col gap-5 justify-center items-center
                               border-2   border-bluePrime
-                             rounded-2xl py-5 px-8" style={{backgroundColor:"#07afc947"}}>
+                             rounded-2xl py-5 px-8" style={{backgroundColor:"#07afc947"}} method="POST" action="http://localhost:8000/register">
 
                     <h1 className="text-3xl font-bold ">تسجيل حساب جديد</h1>
 
                      <div className="flex flex-col md:flex-row gap-5 justify-center items-center text-black text-xl font-bold">
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label htmlFor="fName">الاسم</label>
-                            <input className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="fName" name="fName" />
+                            <input className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="fName" name="name" />
                         </div>
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label htmlFor="lName">الكنية</label>

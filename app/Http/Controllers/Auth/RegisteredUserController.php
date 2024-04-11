@@ -18,24 +18,20 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): Response
+    public function store(Request $request)
     {
 
-        $request->validate([
-            'fName' => ['required', 'string', 'max:255'],
+        $incomingFields = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
             'lName' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required'],
+            'password' => ['required',Password::defaults()],
             'gender' => ['required', 'string', 'max:255'],
             'status' => ['required', 'string', 'max:255'],
             'date' => ['required', 'string', 'max:255'],
         ]);
-
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password,
-        ]);
+        
+        $user = User::create($incomingFields);
 
         // event(new Registered($user));
 
@@ -43,4 +39,23 @@ class RegisteredUserController extends Controller
 
         return response()->json($user);
     }
+
+    public function get(Request $request)
+    {
+        $user = User::where('email', $request->email)->first();
+
+        if ($user) {
+            return response()->json([
+                'status' => true,
+                'message' => 'User found successfully.',
+                'data' => $user
+            ]);
+        } else {
+            return response()->json([
+                'status' => false,
+                'message' => 'User not found.',
+            ]);
+        }
+    }
+
 }
