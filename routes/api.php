@@ -31,7 +31,7 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 });
 Route::get('users/{email}',[RegisteredUserController::class,'get']);
 
-Route::get('/read/{email}/{input}',[ProfileController::class,'read']);
+Route::post('/users/read/{email}/{input}',[ProfileController::class,'read']);
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->name('register');
                 // ->middleware('cors')
