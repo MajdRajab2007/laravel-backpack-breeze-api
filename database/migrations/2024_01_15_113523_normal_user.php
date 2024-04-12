@@ -20,6 +20,7 @@ return new class extends Migration
             $table->dateTime('birthday');
             $table->string('gender');
             $table->string('image')->nullable();
+            $table->string('image')->nullable();
             $table->string('lName')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

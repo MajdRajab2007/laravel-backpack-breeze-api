@@ -60,6 +60,7 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
 
+Route::put('/users/{email}',[ProfileController::class,'editUser']);
 //Content Routes::
 //find by tag name(video / graphic...)
 Route::get('posts/tag/{tag_name}',[PostsController::class,'showByTag']);

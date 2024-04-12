@@ -26,21 +26,56 @@ class ProfileController extends Controller
         ]);
     }
 
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function editUser(Request $request)
     {
-        $request->user()->fill($request->validated());
+        // Retrieve the authenticated user
+        $user = User::where('email', $request->email)->first();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        // Validate the incoming request
+        $request->validate([
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        // Check if a new image file was uploaded
+        if ($request->hasFile('image')) {
+            // Get the new image file
+            $image = $request->file('image');
+
+            // Generate a unique filename for the new image
+            $filename = uniqid() . '.' . $image->getClientOriginalExtension();
+
+            // Move the new image file to the public/storage directory
+            $image->storeAs('public/storage', $filename);
+
+            // Update the user's image field with the new filename
+            $user->image = $filename;
         }
 
-        $request->user()->save();
+        // Save the updated user to the database
+        $user->save();
 
-        return Redirect::route('profile.edit');
+        // Return a response indicating success
+        return response()->json([
+            'status' => true,
+            'message' => 'User updated successfully.',
+        ]);
     }
+
+    // /**
+    //  * Update the user's profile information.
+    //  */
+    // public function update(ProfileUpdateRequest $request): RedirectResponse
+    // {
+    //     $request->user()->fill($request->validated());
+
+    //     if ($request->user()->isDirty('email')) {
+    //         $request->user()->email_verified_at = null;
+    //     }
+
+    //     $request->user()->save();
+
+    //     return Redirect::route('profile.edit');
+    // }
 
     /**
      * Delete the user's account.
