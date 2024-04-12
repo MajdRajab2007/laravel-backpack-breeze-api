@@ -100,8 +100,10 @@ class ProfileController extends Controller
 
     public function read(Request $request){
         $user = User::where('email',$request->email)->get()->first();
-        $array = [$user['read_articles']];
+        $array = $user['read_articles'];
+        $array[0] = '';
         $input = $request->input;
+        // var_dump($input);
         array_push($array,$input);
         $user->read_articles = $array; 
         $user->save();

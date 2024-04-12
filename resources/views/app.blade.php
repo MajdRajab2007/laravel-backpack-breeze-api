@@ -8,16 +8,8 @@
 </head>
 
 <body>
-    <form method='POST' action='http://127.0.0.1:8000/register' className='bg-red-500 text-bluePrime font-bold flex flex-col gap-5'>
-        @csrf
-        <input type="text" name='fname' placeholder="Name" />
-        <input type="email" name='lname' placeholder="Email" />
-        <input type="email" name='email' placeholder="Email" />
-        <input type="email" name='email' placeholder="Email" />
-        <input type="email" name='email' placeholder="Email" />
-        <input type="email" name='email' placeholder="Email" />
-
-        <input type="password" name='password' placeholder="Password" />
+    <form method='POST' action='http://localhost:8000/api/users/read/test@example.com' className='bg-red-500 text-bluePrime font-bold flex flex-col gap-5'>
+        <input type="text" name="input">
         <button type="submit" className='p-8 bg-black text-white'>Register</button>
     </form>
 </body>
