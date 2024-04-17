@@ -60,7 +60,9 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
 
-Route::put('/users/{email}',[ProfileController::class,'editUser']);
+Route::put('/users/image/{email}',[ProfileController::class,'editUser']);
+Route::put('/users/info/{email}',[ProfileController::class,'edit']);
+
 //Content Routes::
 //find by tag name(video / graphic...)
 Route::get('posts/tag/{tag_name}',[PostsController::class,'showByTag']);
@@ -84,6 +86,5 @@ Route::get('posts/tag_design/{tag_name}/{design_type}/{id}',[PostsController::cl
 //self roadmap routes
 Route::get('self-roadmap/',[RoadmapController::class,'show']);
 Route::get('self-roadmap/search/{search}',[RoadmapController::class,'search']);
-
 Route::get('self-roadmap/tag/{tag_name}',[RoadmapController::class,'showByTag']);
 Route::get('self-roadmap/tag/{tag}/{id}',[RoadmapController::class,'showByTagId']);
