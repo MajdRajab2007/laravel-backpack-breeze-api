@@ -2,6 +2,7 @@ import React from 'react'
 import lesson from "../lesson.jpg"
 import Image from 'next/image'
 import Link from 'next/link'
+import ReadArticle from '@/app/(pages)/blog/(pages)/(components)/ReadArticle'
 
 const AllContent = async() => {
     let req = await fetch('http://localhost:8000/api/posts/tag/4')
@@ -16,7 +17,7 @@ const AllContent = async() => {
 
              {data.map((lesson) => {
                 return (
-                    <Link href={`/lessons/${lesson.tag_name}/${lesson.id}`} key={lesson.id} className='flex flex-col justify-center items-center gap-5 w-[70%] mx-auto'>
+                    <div  key={lesson.id} className='flex flex-col justify-center items-center gap-5 w-[70%] mx-auto'>
                     <Image src={`http://localhost:8000/storage/${lesson.image}`} alt='lesson' width={200} height={200} />
                     <div className='dark:text-white flex flex-col justify-center items-center'>
                         <h1 className='text-2xl font-bold'>
@@ -26,7 +27,8 @@ const AllContent = async() => {
                             {lesson.review}
                         </h4>
                     </div>
-            </Link>
+                    <ReadArticle body={lesson} tag={lesson.tag_name} id={lesson.id} />
+            </div>
                 )
              })}
 

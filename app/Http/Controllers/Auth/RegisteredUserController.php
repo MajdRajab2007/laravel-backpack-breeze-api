@@ -30,14 +30,14 @@ class RegisteredUserController extends Controller
             'status' => ['required', 'string', 'max:255'],
             'date' => ['required', 'string', 'max:255'],
         ]);
-        
+
         $user = User::create($incomingFields);
 
         // event(new Registered($user));
 
-        // Auth::login($user);
+        Auth::login($user);
+        return response()->json($request->user);
 
-        return response()->json($user);
     }
 
     public function get(Request $request)

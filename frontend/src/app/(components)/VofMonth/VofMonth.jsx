@@ -17,15 +17,15 @@ const VofMonth = () => {
                         ميلاد القصيري
                 </div>
         </div>
-       
 
 
-        
+
+
         <div className={`w-[40%] md:w-[25%] h-[400px] col-span-2 md:col-span-1  ${style.background}`} style={{borderRadius:"32px"}}>
-            
+
         </div>
 
-       
+
 
     </div>
   )

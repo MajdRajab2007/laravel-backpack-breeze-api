@@ -14,7 +14,7 @@ class RoadmapController extends Controller
 
 
     public function search(Request $request){
-        
+
         $roadmaps = Roadmaps::where('title','LIKE','%'.$request->search.'%')->get();
 
 
@@ -45,7 +45,7 @@ class RoadmapController extends Controller
 }
 
 public function showById(Request $request){
-    $posts = Roadmaps::where('id',$request->id)->first();
+    $posts = Roadmaps::find($request->id);
 
     return response()->json($posts);
 }

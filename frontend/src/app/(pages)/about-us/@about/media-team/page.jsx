@@ -12,7 +12,7 @@ const MediaTeam = () => {
   return (
     <div className='dark:bg-darkbg pt-5'>
         <ul className='grid grid-cols-2 border-2 border-bluePrime md:grid-cols-4 gap-x-6 bg-bluePrime rounded-3xl justify-center w-[70%] m-auto'>
-            <Link href={'/about-us/'} className='w-[100%] duration-150 hover:bg-white hover:text-bluePrime text-white py-3 px-4 font-bold'>
+            <Link href={'/about-us/'} className='w-[100%] rounded-r-3xl duration-150 hover:bg-white hover:text-bluePrime text-white py-3 px-4 font-bold'>
                 دليل الشباب
             </Link>
             <Link href={'/about-us/web-team'} className='w-[100%] duration-150 hover:bg-white hover:text-bluePrime text-white py-3 px-4  font-bold'>
@@ -21,7 +21,7 @@ const MediaTeam = () => {
             <Link href={'/about-us/media-team'} className='w-[100%] py-3 text-bluePrime bg-white px-4 font-bold'>
                 فريق الإعلامي
             </Link>
-            <Link href={'/about-us/org-team'} className='w-[100%] duration-150 hover:bg-white hover:text-bluePrime py-3 text-white px-4 font-bold'>
+            <Link href={'/about-us/org-team'} className='w-[100%] rounded-l-3xl duration-150 hover:bg-white hover:text-bluePrime py-3 text-white px-4 font-bold'>
                 فريق التنظيم
             </Link>
         </ul>

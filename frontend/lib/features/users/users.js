@@ -13,11 +13,32 @@ export const fetchUserData = createAsyncThunk(
   }
 );
 
+// Define an async thunk action to add data to the API
+export const addUserData = createAsyncThunk(
+  'usersSlice/addUserData',
+  async ({ email, newData }) => {
+    const response = await fetch(`http://localhost:8000/api/users/read/${email}/`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newData)
+    });
+    if (!response.ok) {
+      throw new Error('Failed to add user data');
+    }
+    fetchUserData(email)
+    const data = await response.json();
+    return data;
+
+  }
+);
+
 export const usersSlice = createSlice({
   name: "usersSlice",
   initialState: {
     userData: null,
-    status: 'idle', // 'loading', 'succeeded', 'failed'
+    status: 'idle',
     error: null
   },
   reducers: {},
@@ -29,10 +50,22 @@ export const usersSlice = createSlice({
       .addCase(fetchUserData.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.userData = action.payload;
-        // Save fetched data to browser storage
-        localStorage.setItem('userData', JSON.stringify(action.payload));
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem('userData', JSON.stringify(action.payload));
+        }
       })
       .addCase(fetchUserData.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+      .addCase(addUserData.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(addUserData.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        // Handle the response if needed
+      })
+      .addCase(addUserData.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });
@@ -40,9 +73,14 @@ export const usersSlice = createSlice({
 });
 
 // Load user data from browser storage if available when the application initializes
-const storedUserData = localStorage.getItem('userData');
-if (storedUserData) {
-  usersSlice.initialState = JSON.parse(storedUserData);
+if (typeof window !== 'undefined') {
+  const storedUserData = sessionStorage.getItem('userData');
+  if (storedUserData) {
+    usersSlice.initialState = {
+      ...usersSlice.initialState,
+      userData: JSON.parse(storedUserData)
+    };
+  }
 }
 
 export default usersSlice.reducer;
