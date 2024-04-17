@@ -18,13 +18,7 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    public function edit(Request $request): Response
-    {
-        return Inertia::render('Profile/Edit', [
-            'mustVerifyEmail' => $request->user() instanceof MustVerifyEmail,
-            'status' => session('status'),
-        ]);
-    }
+    
 
     public function editUser(Request $request)
     {
@@ -77,6 +71,12 @@ class ProfileController extends Controller
     //     return Redirect::route('profile.edit');
     // }
 
+    public function edit(Request $request) {
+        $user = User::where('email',$request->email)->first();
+        $incomingFields = $request->about;
+        $user->about = $incomingFields;
+        $user->save();
+    }
     /**
      * Delete the user's account.
      */

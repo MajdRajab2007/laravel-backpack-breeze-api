@@ -8,8 +8,9 @@
 </head>
 
 <body>
-    <form method='POST' action='http://localhost:8000/api/users/read/test@example.com' className='bg-red-500 text-bluePrime font-bold flex flex-col gap-5'>
-        <input type="text" name="input">
+    <form method='POST' action='http://localhost:8000/api/users/info/test@example.com' enctype="multipart/form-data">
+        @method('PUT')
+        <input type="text" name="about">
         <button type="submit" className='p-8 bg-black text-white'>Register</button>
     </form>
 </body>
