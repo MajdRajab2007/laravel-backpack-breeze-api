@@ -43,7 +43,7 @@ const Profile = () => {
                               </Link>
                           </div>
                           )
-                      }) : articlesArray == null ?  <div>no data</div> : <div>no data</div>
+                      }) : articlesArray == null ?  <div>لم تقم بقراءة أي مقال بعد</div> : <div>لم تقم بقراءة أي مقال بعد</div>
                   }
 
       {/* Test */}
