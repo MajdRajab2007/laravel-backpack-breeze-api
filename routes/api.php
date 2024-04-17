@@ -25,7 +25,8 @@ use Illuminate\Auth\Events\Registered;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::put('/users/image/{email}',[ProfileController::class,'editUser']);
+Route::put('/users/info/{email}',[ProfileController::class,'edit']);
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
