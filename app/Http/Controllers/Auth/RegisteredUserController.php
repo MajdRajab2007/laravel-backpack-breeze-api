@@ -33,7 +33,7 @@ class RegisteredUserController extends Controller
 
         $user = User::create($incomingFields);
 
-        // event(new Registered($user));
+        event(new Registered($user));
 
         Auth::login($user);
         return response()->json($request->user);
