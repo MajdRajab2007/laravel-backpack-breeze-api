@@ -30,10 +30,10 @@ class RegisteredUserController extends Controller
             'status' => ['required', 'string', 'max:255'],
             'date' => ['required', 'string', 'max:255'],
         ]);
-        
+
         $user = User::create($incomingFields);
 
-        // event(new Registered($user));
+        event(new Registered($user));
 
         // Auth::login($user);
 
