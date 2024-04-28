@@ -19,7 +19,7 @@ const ReadArticle = ({ body, email, tag, id }) => {
       // Parse stored user data
       const userInfo = storedUserData ? storedUserData : null;
       // Log user info for debugging
-      console.log(userInfo);
+    //   //(userInfo);
     }
   }, []); // Empty dependency array ensures this effect runs only once after component mount
 

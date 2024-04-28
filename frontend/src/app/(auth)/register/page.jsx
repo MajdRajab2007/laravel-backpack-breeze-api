@@ -4,11 +4,16 @@ import style from "../style.module.css"
 import React, { useState } from 'react'
 import back from "../background.jpg"
 import { fetchUserData } from "../../../../lib/features/users/users"
+import Link from "next/link"
+import { FaEye, FaEyeDropper, FaEyeSlash } from "react-icons/fa6"
+import { RiEyeCloseFill, RiEyeCloseLine } from "react-icons/ri"
 
 const Register = () => {
     let dispatch = useDispatch()
     let [email, setEmail] = useState('')
-    console.log(JSON.stringify(back))
+    // //(JSON.stringify(back))
+    // handle password show
+    let [password, setPassword] = useState(false)
   return (
     <div className={`${style.authContainer}  h-[100vh] flex justify-center items-start`}>
 
@@ -22,22 +27,28 @@ const Register = () => {
                      <div className="flex flex-col md:flex-row gap-5 justify-center items-center text-black text-xl font-bold">
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label htmlFor="fName">الاسم</label>
-                            <input className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="fName" name="name" />
+                            <input required className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="fName" name="name" />
                         </div>
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label htmlFor="lName">الكنية</label>
-                            <input className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="lName" name="lName" />
+                            <input required className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="lName" name="lName" />
                         </div>
                      </div>
 
                      <div className="flex flex-col md:flex-row gap-5 justify-center items-center text-black text-xl font-bold">
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label htmlFor="email">البريد الإلكتروني</label>
-                            <input onClick={(e) => setEmail(e.target.value)} className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="email" name="email" />
+                            <input required onClick={(e) => setEmail(e.target.value)} className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="email" name="email" />
                         </div>
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label htmlFor="password">كلمة السر</label>
-                            <input className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="password" name="password" />
+                            <div className="flex gap-3 justify-center items-center">
+                            <div>
+                            {password ?  <FaEyeSlash onClick={() => setPassword(false)}  className="text-bluePrime cursor-pointer"/> : <FaEye onClick={() => setPassword(true)}  className="text-bluePrime cursor-pointer"/> }
+                            </div>
+                            <input required type={password ? 'text' : 'password'} className="border-2 border-bluePrime rounded-md focus:border-white" id="password" name="password" />
+                            </div>
+
                         </div>
                      </div>
 
@@ -53,7 +64,7 @@ const Register = () => {
 
                         <div className="flex flex-col justify-center items-start gap-2">
                           <label htmlFor="status">الحالة:</label>
-                            <select className="md:w-[200px]" name="status" id="status">
+                            <select required className="md:w-[200px]" name="status" id="status">
                                 <option value="student">طالب</option>
                                 <option value="emp">موظف</option>
                             </select>
@@ -63,13 +74,13 @@ const Register = () => {
                      <div className="flex flex-col md:flex-row gap-5 justify-center items-center text-black text-xl font-bold">
                      <div className="flex flex-col justify-center items-start gap-2">
                             <label htmlFor="date">تاريخ الميلاد</label>
-                            <input className="border-2 border-bluePrime rounded-md focus:border-white" type="date" id="date" name="date" />
+                            <input required className="border-2 border-bluePrime rounded-md focus:border-white" type="date" id="date" name="date" />
                         </div>
                      </div>
 
                      <input type="submit" onClick={() => dispatch(fetchUserData(email))} className="mt-5 font-bold mx-auto bg-greenPrime border-greenPrime border-2 rounded-3xl py-2 px-5 text-white" value='تسجيل حساب جديد'  />
                         <div className="flex gap-x-2">
-                                هل تملك حساب؟ يمكنك <span className="font-bold">تسجيل الدخول</span>
+                                هل تملك حساب؟ يمكنك <Link href={'/login'} className="font-bold">تسجيل الدخول</Link>
                         </div>
             </form>
             </div>

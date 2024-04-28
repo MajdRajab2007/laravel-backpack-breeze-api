@@ -22,27 +22,30 @@ const OurServices = () => {
 
 <div className='py-8 px-6 grid md:grid-cols-4 gap-4 justify-center items-center'>
 
-        <div className='flex leading-[1] flex-col gap-5 justify-center items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
-            <FaPen className='text-7xl text-white' />
-            <h1 className='text-white text-3xl font-extrabold'>التدوين وكتابة المقالات</h1>
+        <Link href={'/blog'} className='flex leading-[1] flex-col gap-5 justify-center min-h-[350px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
+                        hover:bg-white duration-150 hover:text-greenPrime border-2 border-greenPrime hover:from-white hover:to-white text-white'>
+            <FaPen className='text-7xl hover:text-greenPrime' />
+            <h1 className='text-3xl font-extrabold'>التدوين وكتابة المقالات</h1>
             <h2 className='mt-3 font-bold w-[60%]'>
                 تدوين وكتابة مقالات قصيرة تدريبية لتغطية مختلف المهارات والمجالات البرمجية
             </h2>
-        </div>
+        </Link>
 
-        <div className='flex leading-[1] flex-col gap-5 justify-center items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
-            <ImVideoCamera className='text-7xl text-white' />
-            <h1 className='text-white text-3xl font-extrabold'>
+        <Link href="https://youtube.com/@YouthGuide4U?feature=shared" target="_blank" className='flex leading-[1] flex-col gap-5 justify-center min-h-[350px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
+                        hover:bg-white duration-150 hover:text-greenPrime border-2 border-greenPrime hover:from-white hover:to-white text-white'>
+            <ImVideoCamera className='text-7xl hover:text-greenPrime' />
+            <h1 className='text-3xl font-extrabold'>
                 إنتاج الفيديوهات
             </h1>
             <h2 className='mt-3 font-bold w-[50%]'>
                 تسجيل الفيدويهات المجانية في مختلف المجالات بشكل مجاني
             </h2>
-        </div>
+        </Link>
 
-        <Link href={'/our-services/road-map'} className='flex leading-[1] flex-col gap-5 justify-center items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
-            <FaLocationDot className='text-7xl text-white' />
-            <h1 className='text-white text-3xl font-extrabold'>
+        <Link href={'/our-services/road-map'} className='flex leading-[1] flex-col gap-5 justify-center min-h-[350px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
+                        hover:bg-white duration-150 hover:text-greenPrime border-2 border-greenPrime hover:from-white hover:to-white text-white'>
+            <FaLocationDot className='text-7xl hover:text-greenPrime' />
+            <h1 className='text-3xl font-extrabold'>
                 تقديم خارطة الطريق
             </h1>
             <h2 className='mt-3 font-bold w-[80%]'>
@@ -50,14 +53,14 @@ const OurServices = () => {
                 الاعتماد على تقنية الذكاء الصنعي
             </h2>
         </Link >
-        <Link href={'/our-services/courses'} className='flex leading-[1] flex-col gap-5 justify-center items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
-            <FaLocationDot className='text-7xl text-white' />
-            <h1 className='text-white text-3xl font-extrabold'>
-                كورسات مدفوعة
+        <Link href={'/our-services/courses'} className='flex leading-[1] flex-col gap-5 justify-center min-h-[350px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
+                        hover:bg-white duration-150 hover:text-greenPrime border-2 border-greenPrime hover:from-white hover:to-white text-white'>
+            <FaLocationDot className='text-7xl hover:text-greenPrime' />
+            <h1 className='text-3xl font-extrabold'>
+                    التدريب المباشر
             </h1>
-            <h2 className='mt-3 font-bold w-[60%]'>
-                تقديم كورسات مدفوعة لأكثر من 50 مجال تريد تعلمه كم خلال
-                الاعتماد على تقنية
+            <h2 className='mt-3 font-bold w-[60%] text-red-600 text-center'>
+                IN PROGRESS
             </h2>
         </Link >
 

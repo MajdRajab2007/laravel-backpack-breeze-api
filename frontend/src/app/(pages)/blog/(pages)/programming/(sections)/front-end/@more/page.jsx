@@ -9,7 +9,7 @@ const MoreMain = async() => {
         let res = await req.json()
         let data = res.data
         data.length = 3
-        console.log(res)
+        //(res)
   return (
     <div className='mt-6 dark:bg-darkbg pb-6'>
 

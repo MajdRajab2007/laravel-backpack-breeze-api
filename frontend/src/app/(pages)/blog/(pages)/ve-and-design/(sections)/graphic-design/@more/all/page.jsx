@@ -8,7 +8,7 @@ const AllContent = async() => {
         let res = await req.json()
         let data = res.data
 
-        console.log(res)
+        //(res)
   return (
     <div className='mt-6 dark:bg-darkbg pb-6'>
 

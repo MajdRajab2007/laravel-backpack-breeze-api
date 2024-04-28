@@ -11,7 +11,7 @@ const SearchBar = () => {
         e.preventDefault()
         let req = await fetch(`http://localhost:8000/api/self-roadmap/search/${serach}`)
         let res = await req.json()
-        console.log(res)
+        //(res)
         setData(res)
     }
 

@@ -15,14 +15,14 @@ const Bullhorn = () => {
      </div>
 
      <div className="pt-">
-     <ul className='grid grid-cols-2 border-2 border-bluePrime md:grid-cols-3 gap-x-6 bg-bluePrime rounded-3xl justify-center w-[90%] m-auto'>
-            <Link href={'/blog/'} className='w-[100%] duration-150 hover:bg-white hover:text-bluePrime py-3 flex justify-center items-center  px-4 font-bold text-white'>
+     <ul className='grid grid-cols-2 border-2 border-bluePrime md:grid-cols-3  bg-bluePrime rounded-3xl justify-center w-[90%] m-auto'>
+            <Link href={'/blog/'} className='w-[100%] duration-150 md:rounded-r-3xl hover:bg-white hover:text-bluePrime py-3 flex justify-center items-center  px-4 font-bold text-white'>
                 البرمجة
             </Link>
             <Link href={'/blog/ve-and-design'} className='w-[100%]  duration-150 hover:bg-white hover:text-bluePrime py-3 flex justify-center items-center px-4 text-white  font-bold'>
                 التصميم والمونتاج
             </Link>
-            <Link href={'/blog/bullhorn'} className='w-[100%] py-3 flex justify-center bg-white items-center px-4 font-bold text-bluePrime  '>
+            <Link href={'/blog/bullhorn'} className='w-[100%] py-3 md:rounded-l-3xl flex justify-center bg-white items-center px-4 font-bold text-bluePrime  '>
                 التسويق
             </Link>
             {/* <Link href={'/blog/leadership'} className='w-[100%] duration-150 hover:bg-white hover:text-bluePrime py-3 flex justify-center items-center px-4 font-bold  text-white'>

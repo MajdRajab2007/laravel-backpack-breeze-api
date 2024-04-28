@@ -15,14 +15,14 @@ const Blog = () => {
      </div>
 
      <div className="pt-">
-     <ul className='grid grid-cols-2 border-2 border-bluePrime md:grid-cols-3 gap-x-6 bg-bluePrime rounded-3xl justify-center w-[90%] m-auto'>
-            <Link href={'/blog/'} className='w-[100%] py-3 flex bg-white justify-center items-center  px-4 font-bold text-bluePrime'>
+     <ul className='grid grid-cols-2 border-2 border-bluePrime md:grid-cols-3  bg-bluePrime rounded-3xl justify-center w-[90%] m-auto'>
+            <Link href={'/blog/'} className='w-[100%] py-3 flex md:rounded-r-3xl bg-white justify-center items-center  px-4 font-bold text-bluePrime'>
                 البرمجة
             </Link>
             <Link href={'/blog/ve-and-design'} className='w-[100%] duration-150 hover:bg-white hover:text-bluePrime text-white py-3 flex justify-center items-center px-4  font-bold'>
                 التصميم والمونتاج
             </Link>
-            <Link href={'/blog/bullhorn'} className='w-[100%] duration-150 hover:bg-white hover:text-bluePrime py-3 flex justify-center items-center px-4 font-bold  text-white'>
+            <Link href={'/blog/bullhorn'} className='w-[100%] duration-150 md:rounded-l-3xl hover:bg-white hover:text-bluePrime py-3 flex justify-center items-center px-4 font-bold  text-white'>
                 التسويق
             </Link>
             {/* <Link href={'/blog/leadership'} className='w-[100%] duration-150 hover:bg-white hover:text-bluePrime py-3 flex justify-center items-center px-4 font-bold  text-white'>

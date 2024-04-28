@@ -2,21 +2,28 @@ import React from 'react'
 import Link from 'next/link'
 import { FaLocationDot, FaPen } from 'react-icons/fa6'
 import { ImVideoCamera } from 'react-icons/im'
+import roadmap from "./images/roadmap.png"
+import Image from 'next/image'
+import logo from './images/logo.png'
+
 
 const About = () => {
   return (
     <div className='dark:bg-darkbg pt-5'>
-        <ul className='grid grid-cols-2 border-2 border-bluePrime md:grid-cols-4 gap-x-6 bg-bluePrime rounded-3xl justify-center w-[70%] m-auto'>
-            <Link href={'/about-us/'} className='w-[100%] rounded-r-3xl py-3 px-4 text-bluePrime bg-white font-bold'>
+        <ul className='grid text-xl grid-cols-2 border-2 border-bluePrime md:flex bg-bluePrime rounded-3xl justify-center w-[80%] m-auto'>
+
+             <Image src={logo} width={50} height={50} alt='logo' className='p-1 mx-auto' />
+
+            <Link href={'/about-us/'} className='w-[100%] flex justify-center items-center py-3 px-4 text-bluePrime bg-white font-bold'>
                 دليل الشباب
             </Link>
-            <Link href={'/about-us/web-team'} className='w-[100%] text-white duration-150 hover:bg-white hover:text-bluePrime py-3 px-4  font-bold'>
+            <Link href={'/about-us/web-team'} className='w-[100%] flex justify-center items-center text-white duration-150 hover:bg-white hover:text-bluePrime py-3 px-4  font-bold'>
                 فريق الويب
             </Link>
-            <Link href={'/about-us/media-team'} className='w-[100%] text-white py-3 px-4 duration-150 hover:bg-white hover:text-bluePrime  font-bold'>
+            <Link href={'/about-us/media-team'} className='w-[100%] flex justify-center items-center text-white py-3 px-4 duration-150 hover:bg-white hover:text-bluePrime  font-bold'>
                 فريق الإعلامي
             </Link>
-            <Link href={'/about-us/org-team'} className='w-[100%] rounded-l-3xl text-white py-3 px-4 duration-150 hover:bg-white hover:text-bluePrime  font-bold'>
+            <Link href={'/about-us/org-team'} className='w-[100%] flex justify-center items-center md:rounded-l-3xl text-white py-3 px-4 duration-150 hover:bg-white hover:text-bluePrime  font-bold'>
                 فريق التنظيم
             </Link>
         </ul>
@@ -25,34 +32,32 @@ const About = () => {
             دليل الشباب شركة برمجية ناشئة تهدف لخلق المهارات البرمجية عند اليافعين على مبدأ تدريب اليافعين باليافعين أنفسهم
         </div>
 
-        <div className='py-8 px-6 grid md:grid-cols-3 gap-8 justify-center items-center'>
+        <div className='py-8 px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center items-center'>
 
-<div className='flex leading-[3] flex-col h-[400px] gap-5 justify-center items-center rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
-    <FaPen className='text-7xl text-white' />
-    <h1 className='text-white text-3xl font-extrabold'>التدوين وكتابة المقالات</h1>
-    <h2 className='mt-3 font-bold text-xl text-justify'>
-        تدوين وكتابة مقالات قصيرة تدريبية لتغطية مختلف المهارات والمجالات البرمجية
-    </h2>
+<div className='flex leading-[3] flex-col min-h-[400px] gap-5 justify-center items-center rounded-[70px] py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
+    {/* <FaPen className='text-7xl text-white' /> */}
+    <Image src={roadmap} alt="ss" />
+    <h1 className='text-white text-2xl font-extrabold'>التدوين وكتابة المقالات</h1>
+    <h2 className='mt-3 font-bold text-xl text-justify text-white'>
+    نقدم في دليل الشباب بتقديم دورات تدريبية مجانية باللغة العربية حصريا عبر قناتنا على اليوتيوب    </h2>
 </div>
 
-<div className='flex leading-[3] flex-col h-[400px] gap-5 justify-center items-center rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
+<div className='flex leading-[3] flex-col min-h-[400px] gap-5 justify-center items-center rounded-[70px] py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
     <ImVideoCamera className='text-7xl text-white' />
-    <h1 className='text-white text-3xl font-extrabold'>
+    <h1 className='text-white text-2xl font-extrabold'>
         إنتاج الفيديوهات
     </h1>
-    <h2 className='mt-3 font-bold text-xl text-justify'>
-        تسجيل الفيدويهات المجانية في مختلف المجالات بشكل مجاني
-    </h2>
+    <h2 className='mt-3 font-bold text-xl text-justify text-white'>
+    نقدم في دليل الشباب خدمة خارطة الطريق لأكثر من 50 مسار تقني تعليمي وبشكل حصري عبر موقعنا    </h2>
 </div>
 
-<div className='flex leading-[3] flex-col h-[400px] gap-5 justify-center items-center rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
+<div className='flex leading-[3] flex-col min-h-[400px] gap-5 justify-center items-center rounded-[70px] py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
     <FaLocationDot className='text-7xl text-white' />
-    <h1 className='text-white text-3xl font-extrabold'>
+    <h1 className='text-white text-2xl font-extrabold'>
         تقديم خارطة الطريق
     </h1>
-    <h2 className='mt-3 font-bold text-xl text-justify'>
-        تقديم خارطة الطريق الصحيح لأكثر من 50 مجال تريد تعلمه كم خلال
-        الاعتماد على تقنية الذكاء الصنعي
+    <h2 className='mt-3 font-bold text-xl text-justify text-white'>
+    نقدم في دليل الشباب مقالات قصيرة نوعية تناسب فئة اليافعين وتسهم في رفع ثقافتهم التقنية
     </h2>
 </div>
 

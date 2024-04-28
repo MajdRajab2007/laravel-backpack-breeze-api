@@ -31,7 +31,7 @@ const Profile = () => {
         if(articlesArray !== null) {
             articlesArray.length = 4;
         }
-        // console.log(articlesArray)
+        // //(articlesArray)
 
 
 
@@ -41,19 +41,19 @@ const Profile = () => {
     let [image, setImage] = useState('')
     const imageProfile = userData.data.image
 
-    let handleImage = () => {
-        fetch(`http://localhost:8000/api/users/image/adham111mahfoud@gmail.com`,{
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json",
+    // let handleImage = () => {
+    //     fetch(`http://localhost:8000/api/users/image/adham111mahfoud@gmail.com`,{
+    //         method: "PUT",
+    //         headers: {
+    //             "Content-Type": "application/json",
 
 
-            },
-            body: JSON.stringify({
-                image: "image"
-            }),
-        }).then((res) => console.log(res))
-    }
+    //         },
+    //         body: JSON.stringify({
+    //             image: "image"
+    //         }),
+    //     }).then((res) => //(res))
+    // }
 
     // Update the Bio
 
@@ -120,11 +120,11 @@ const Profile = () => {
 
             <div className='flex flex-col gap-8 justify-center items-center relative bottom-0 md:bottom-[150px] w-[100%]'>
 
-            <form onSubmit={() => dispatch(fetchUserData(email))} action="http://localhost:8000/api/users/image/adham111mahfoud@gmail.com" method='POST' enctype="multipart/form-data" className='absolute left-[5999%]'>
+            <form onSubmit={() => dispatch(fetchUserData(email))} action={`http://localhost:8000/api/users/image/${email}`} method='POST' enctype="multipart/form-data" className='absolute left-[5999%]'>
     <input type="hidden" name="_method" value="PUT"/>
     <input id='image' onChange={(e) => {
         setImage(e.target.files[0]);
-        console.log(image);
+        //(image);
     }} type='file' name='image' />
     <input type="submit" id='sub' />
 </form>
@@ -133,7 +133,7 @@ const Profile = () => {
 
                     <div className='bottom-[-30px] relative'>
                         <label htmlFor="image" className='text-7xl w-[50px] h-[50px] bg-greenPrime rounded-full flex justify-center items-center cursor-pointer  font-bold text-white top-[70%] absolute'>+</label>
-                    <Image priority src={imageProfile ? `http://localhost:8000/storage/storage/${imageProfile}` : felix} onClick={() => console.log("Hellow ")} width={250} height={250} className='h-[250px] rounded-full border-2 border-greenPrime' alt='profile' />
+                    <Image priority src={imageProfile !== null ? `http://localhost:8000/storage/storage/${imageProfile}` : prof}  width={250} height={250} className='h-[250px] rounded-full border-2 border-greenPrime' alt='profile' />
                     </div>
                             {image && <div className='flex flex-col mt-6 gap-5'>
                                 <label htmlFor='sub'  className='text-white text-4xl bg-bluePrime font-bold flex justify-center items-center w-fit py-2 rounded-3xl cursor-pointer px-6'>تغيير الصورة</label>

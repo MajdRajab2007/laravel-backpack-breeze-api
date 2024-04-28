@@ -35,8 +35,8 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        Auth::login($user);
-        return response()->json($request->user);
+        // Auth::login($user);
+        return response()->json($user);
 
     }
 

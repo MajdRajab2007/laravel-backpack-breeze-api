@@ -3,17 +3,20 @@ import style from "../style.module.css"
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUserData } from "../../../../lib/features/users/users";
+import Link from "next/link";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 
 const Login = () => {
     let dispatch = useDispatch()
     let select = useSelector((state) => state.users)
+    let [password, setPassword] = useState(false)
 
     let [email, setEmail] = useState("")
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        console.log(email)
+        // //(email)
 
       };
   return (
@@ -34,13 +37,17 @@ const Login = () => {
                         </div>
                         <div className="flex flex-col mt-5 justify-center items-start gap-2">
                             <label htmlFor="password">كلمة السر</label>
-                            <input required className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="password" name="password" />
+                            <input required type={password ? 'text' : 'password'}  className="border-2 border-bluePrime rounded-md focus:border-white"  id="password" name="password" />
+                        </div>
+                        <div className="mt-2 flex justify-center items-center">
+                        {password ?  <FaEyeSlash onClick={() => setPassword(false)}  className="text-bluePrime cursor-pointer"/> : <FaEye onClick={() => setPassword(true)}  className="text-bluePrime cursor-pointer"/> }
+
                         </div>
                      </div>
 
                      <input onClick={() => dispatch(fetchUserData(email))} type="submit" className="mt-5 font-bold mx-auto bg-greenPrime border-greenPrime border-2 rounded-3xl py-2 px-5 text-white" value='تسجيل الدخول'  />
                         <div className="flex flex-col gap-x-2 justify-center items-center">
-                                لا تمتلك حساب؟ يمكنك <span className="font-bold">تسجيل حساب جديد</span>
+                                لا تمتلك حساب؟ يمكنك <Link href={'/register'} className="font-bold">تسجيل حساب جديد</Link>
                         </div>
             </form>
             </div>

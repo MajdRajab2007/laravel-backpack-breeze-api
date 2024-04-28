@@ -51,37 +51,43 @@ const Navbar = () => {
            </span>
          </div>
 
-         <ul className={`  text-white lg:flex text-2xl lg:justify-between gap-x-10 lg:items-center z-[-1] lg:z-auto lg:static   w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100  transition-all ease-out duration-500
+         <ul className={`  text-white lg:flex text-xl lg:justify-between gap-x-3 lg:items-center z-[-1] lg:z-auto lg:static   w-full left-0 lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opacity-100  transition-all ease-out duration-500
                  ${scrollMenu ? "opacity-100 top-[100px] static border-b-2 border-white" : "opacity-0 top-[-400px] absolute"}
          `}>
 
            <li className={`mx-4 my-6 lg:my-0 ${scrollMenu ? "border-b-2 border-white p-4" : ""}`}>
-             <Link onClick={() => setScrollMenu(false)} href={`/`} className="font-semibold hover:text-bluePrime duration-300">
+             <Link onClick={() => setScrollMenu(false)} href={`/`} className="font-semibold hover:text-3xl dark:hover:text-bluePrime duration-300">
                     الصفحة الرئيسية
              </Link>
            </li>
 
            <li className={`mx-4 my-6 lg:my-0 ${scrollMenu ? "border-b-2 border-white p-4" : ""}`}>
-             <Link onClick={() => setScrollMenu(false)} href={`/about-us`} className="font-semibold hover:text-bluePrime duration-300">
+             <Link onClick={() => setScrollMenu(false)} href={`/about-us`} className="font-semibold hover:text-3xl dark:hover:text-bluePrime duration-300">
                     من نحن
              </Link>
            </li>
 
            <li className={`mx-4 my-6 lg:my-0 ${scrollMenu ? "border-b-2 border-white p-4" : ""}`}>
-             <Link onClick={() => setScrollMenu(false)} href={`/contact-us`} className="font-semibold hover:text-bluePrime duration-300">
+             <Link onClick={() => setScrollMenu(false)} href={`/contact-us`} className="font-semibold hover:text-3xl dark:hover:text-bluePrime duration-300">
                    تواصل معنا
              </Link>
            </li>
 
            <li className={`mx-4 my-6 lg:my-0 ${scrollMenu ? "border-b-2 border-white p-4" : ""}`}>
-             <Link onClick={() => setScrollMenu(false)} href={`/blog`} className="font-semibold hover:text-bluePrime duration-300">
+             <Link onClick={() => setScrollMenu(false)} href={`/blog`} className="font-semibold hover:text-3xl dark:hover:text-bluePrime duration-300">
                   المدونة
              </Link>
            </li>
 
            <li className={`mx-4 my-6 lg:my-0 ${scrollMenu ? "border-b-2 border-white p-4" : ""}`}>
-             <Link onClick={() => setScrollMenu(false)} href={`/our-services`} className="font-semibold hover:text-bluePrime duration-300">
+             <Link onClick={() => setScrollMenu(false)} href={`/our-services`} className="font-semibold hover:text-3xl dark:hover:text-bluePrime duration-300">
                   خدماتنا
+             </Link>
+           </li>
+
+           <li className={`mx-4 my-6 lg:my-0 ${scrollMenu ? "border-b-2 border-white p-4" : ""}`}>
+             <Link onClick={() => setScrollMenu(false)} href={`/profile`} className="font-semibold hover:text-3xl dark:hover:text-bluePrime duration-300">
+                    الملف الشخصي
              </Link>
            </li>
 

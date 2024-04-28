@@ -6,7 +6,7 @@ const ReadRoad = async ({params}) => {
 
         let req = await fetch(`http://localhost:8000/api/self-roadmap/${params.id}`);
         let res = await req.json();
-        console.log(res);
+        //(res);
 
   return (
         <div key={res.id} className='border-2 pb-8 rounded-2xl gap-5
