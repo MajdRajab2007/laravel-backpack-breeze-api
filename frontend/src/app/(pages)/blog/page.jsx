@@ -9,13 +9,13 @@ const Blog = () => {
      <div className='dark:bg-darkbg py-6'>
 
             <div className='my-4 mx-auto w-[50%] md:w-[20%] rounded-3xl bg-greenPrime py-3 text-center'>
-            <h1 className='text-3xl font-bold text-white'>أقسام المقالات</h1>
+            <h1 className='text-2xl font-bold text-white'>أقسام المقالات</h1>
             </div>
 
      </div>
 
      <div className="pt-">
-     <ul className='grid grid-cols-2 border-2 border-bluePrime md:grid-cols-3  bg-bluePrime rounded-3xl justify-center w-[90%] m-auto'>
+     <ul className='grid grid-cols-2 border-2 border-bluePrime md:grid-cols-3  bg-bluePrime rounded-3xl justify-center w-[90%] m-auto text-xl'>
             <Link href={'/blog/'} className='w-[100%] py-3 flex md:rounded-r-3xl bg-white justify-center items-center  px-4 font-bold text-bluePrime'>
                 البرمجة
             </Link>
@@ -34,19 +34,19 @@ const Blog = () => {
      <div className='mt-8 grid grid-cols-2 justify-center items-center gap-x-4 md:gap-x-0 gap-y-8 px-6'>
 
             <Link href={"/blog/programming/front-end"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
-                            bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
+                            bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl  shadow-black' style={{boxShadow:"2px 6px 10px rgba(0, 0, 0, 0.3)"}}>
                             Front-End
             </Link>
             <Link href={"/blog/programming/back-end"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
-                            bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
+                            bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl  shadow-black' style={{boxShadow:"2px 6px 10px rgba(0, 0, 0, 0.3)"}}>
                             Back-End
             </Link>
             <Link href={"/blog/programming/programming-basics"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
-                            bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
+                            bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl  shadow-black' style={{boxShadow:"2px 6px 10px rgba(0, 0, 0, 0.3)"}}>
                             Programming Basics
             </Link>
             <Link href={"/blog/programming/competitive-programming"} className='mx-auto py-6 px-4 w-[100%] md:w-[60%] lg:w-[40%] h-[100px] flex justify-center items-center text-2xl text-center text-white font-bold
-                            bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl shadow-sm'>
+                            bg-gradient-to-l from-bluePrime to-greenPrime rounded-3xl  shadow-black' style={{boxShadow:"2px 6px 10px rgba(0, 0, 0, 0.3)"}}>
                             Competitive Programming
             </Link>
 

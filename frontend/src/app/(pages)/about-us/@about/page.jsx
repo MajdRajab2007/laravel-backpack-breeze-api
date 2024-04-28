@@ -5,6 +5,9 @@ import { ImVideoCamera } from 'react-icons/im'
 import roadmap from "./images/roadmap.png"
 import Image from 'next/image'
 import logo from './images/logo.png'
+import { GiPencil } from "react-icons/gi";
+import { GrMapLocation } from "react-icons/gr";
+import { GiClapperboard } from "react-icons/gi";
 
 
 const About = () => {
@@ -36,28 +39,31 @@ const About = () => {
 
 <div className='flex leading-[3] flex-col min-h-[400px] gap-5 justify-center items-center rounded-[70px] py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
     {/* <FaPen className='text-7xl text-white' /> */}
-    <Image src={roadmap} alt="ss" />
+    <GiPencil  className='text-9xl text-white'/>
     <h1 className='text-white text-2xl font-extrabold'>التدوين وكتابة المقالات</h1>
     <h2 className='mt-3 font-bold text-xl text-justify text-white'>
-    نقدم في دليل الشباب بتقديم دورات تدريبية مجانية باللغة العربية حصريا عبر قناتنا على اليوتيوب    </h2>
+    نقدم في دليل الشباب مقالات قصيرة نوعية تناسب فئة اليافعين وتسهم في رفع ثقافتهم التقنية
+
+</h2>
 </div>
 
 <div className='flex leading-[3] flex-col min-h-[400px] gap-5 justify-center items-center rounded-[70px] py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
-    <ImVideoCamera className='text-7xl text-white' />
+    <GiClapperboard className='text-9xl text-white' />
     <h1 className='text-white text-2xl font-extrabold'>
         إنتاج الفيديوهات
     </h1>
     <h2 className='mt-3 font-bold text-xl text-justify text-white'>
-    نقدم في دليل الشباب خدمة خارطة الطريق لأكثر من 50 مسار تقني تعليمي وبشكل حصري عبر موقعنا    </h2>
+    نقدم في دليل الشباب بتقديم دورات تدريبية مجانية باللغة العربية حصريا عبر قناتنا على اليوتيوب
+     </h2>
 </div>
 
 <div className='flex leading-[3] flex-col min-h-[400px] gap-5 justify-center items-center rounded-[70px] py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime'>
-    <FaLocationDot className='text-7xl text-white' />
+    <GrMapLocation className='text-9xl text-white' />
     <h1 className='text-white text-2xl font-extrabold'>
         تقديم خارطة الطريق
     </h1>
     <h2 className='mt-3 font-bold text-xl text-justify text-white'>
-    نقدم في دليل الشباب مقالات قصيرة نوعية تناسب فئة اليافعين وتسهم في رفع ثقافتهم التقنية
+    نقدم في دليل الشباب خدمة خارطة الطريق لأكثر من 50 مسار تقني تعليمي وبشكل حصري عبر موقعنا
     </h2>
 </div>
 

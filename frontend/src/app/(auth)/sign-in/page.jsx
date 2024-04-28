@@ -47,7 +47,7 @@ const Login = () => {
 
                      <input onClick={() => dispatch(fetchUserData(email))} type="submit" className="mt-5 font-bold mx-auto bg-greenPrime border-greenPrime border-2 rounded-3xl py-2 px-5 text-white" value='تسجيل الدخول'  />
                         <div className="flex flex-col gap-x-2 justify-center items-center">
-                                لا تمتلك حساب؟ يمكنك <Link href={'/register'} className="font-bold">تسجيل حساب جديد</Link>
+                                لا تمتلك حساب؟ يمكنك <Link href={'/sign-up'} className="font-bold">تسجيل حساب جديد</Link>
                         </div>
             </form>
             </div>

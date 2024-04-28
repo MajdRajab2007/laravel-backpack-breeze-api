@@ -6,6 +6,11 @@ import { CiLocationOn } from 'react-icons/ci'
 import { FaFacebook, FaInstagram, FaLocationArrow, FaLocationDot, FaPhone, FaTelegram, FaWhatsapp, FaYoutube } from 'react-icons/fa6'
 import { GiMailbox } from 'react-icons/gi'
 
+export const metadata = {
+    title:"تواصل معنا - دليل الشباب",
+    description:"من خلال صفحة تواصل معنا يمكنك الاطلاع على طرق التواصل مع ادارة فريق دليل الشباب او متابعة اخر اخبار الفريق على منصات التواصل الاجتماعي."
+}
+
 const ContactUs = () => {
   return (
    <>

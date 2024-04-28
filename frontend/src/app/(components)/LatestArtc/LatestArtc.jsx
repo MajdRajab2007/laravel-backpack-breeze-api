@@ -6,8 +6,8 @@ const LatestArtc = () => {
   return (
     <div className='dark:bg-darkbg flex flex-col gap-y-10 py-8'>
         <div className='text-4xl md:text-6xl font-extrabold relative text-greenPrime text-center'>
-        <hr className=' relative h-[5px] bg-greenPrime z-[-1] top-[35px]' />
-          <hr className=' relative h-[5px] bg-greenPrime z-[-1] top-[45px]' />
+        <hr className=' relative h-[5px] bg-greenPrime dark:bg-greenPrime z-[-1] top-[25px]' />
+          <hr className=' relative h-[5px] bg-greenPrime dark:bg-greenPrime z-[-1] top-[44px]' />
                 <div className='w-fit bg-white dark:bg-darkbg mx-auto'>
                 أحدث المقالات
                 </div>

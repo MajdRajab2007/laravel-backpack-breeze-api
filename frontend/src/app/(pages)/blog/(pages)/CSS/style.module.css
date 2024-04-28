@@ -1,0 +1,10 @@
+.back {
+    background-image: url("./aboutusback.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+@media (max-width: 769px) {
+    .back {
+        background-size: 100% 100%;
+    }
+}

@@ -10,6 +10,11 @@ import Sharakat from "./(components)/Sharakat/Sharakat";
 import Footer from "./(components)/Footer/Footer";
 import Navbar from "./(components)/Navbar/Navbar";
 
+export const metadata = {
+    title: "الصفحة الرئيسية - دليل الشباب",
+    description: "من خلال الصفحة الرئيسية لدليل الشباب يمكنك الاطلاع على آخر الأحداث التي قام بها الفريق، متطوعي الشهر، آخر أخبار وآخر مستجدات الفريق التعليمية"
+}
+
 export default function Home() {
   return (
  <>

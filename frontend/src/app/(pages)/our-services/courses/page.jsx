@@ -5,7 +5,7 @@ import backend from './images/backend.png'
 import { FaArrowCircleLeft } from 'react-icons/fa'
 import Image from 'next/image'
 
-const Courses = () => {
+export default function Courses () {
   return (
     <div className='dark:bg-darkbg py-6'>
         <Link href={'/our-services/'}
@@ -73,4 +73,3 @@ const Courses = () => {
   )
 }
 
-export default Courses

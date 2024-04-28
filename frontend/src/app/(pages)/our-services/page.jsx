@@ -2,9 +2,12 @@ import Footer from '@/app/(components)/Footer/Footer';
 import Navbar from '@/app/(components)/Navbar/Navbar';
 import Link from 'next/link';
 import React from 'react'
-import { FaPen } from 'react-icons/fa'
+import { GiPencil } from "react-icons/gi";
 import { FaHandHolding, FaLocationDot } from 'react-icons/fa6'
-import { ImVideoCamera } from "react-icons/im";
+import { BiBookBookmark } from "react-icons/bi";
+import { GrMapLocation } from "react-icons/gr";
+import { GiClapperboard } from "react-icons/gi";
+
 
 
 const OurServices = () => {
@@ -22,47 +25,47 @@ const OurServices = () => {
 
 <div className='py-8 px-6 grid md:grid-cols-4 gap-4 justify-center items-center'>
 
-        <Link href={'/blog'} className='flex leading-[1] flex-col gap-5 justify-center min-h-[350px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
+        <Link href={'/blog'} className='flex leading-[1] flex-col gap-5 justify-center min-h-[380px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
                         hover:bg-white duration-150 hover:text-greenPrime border-2 border-greenPrime hover:from-white hover:to-white text-white'>
-            <FaPen className='text-7xl hover:text-greenPrime' />
-            <h1 className='text-3xl font-extrabold'>التدوين وكتابة المقالات</h1>
-            <h2 className='mt-3 font-bold w-[60%]'>
+            <GiPencil className='text-9xl hover:text-greenPrime' />
+            <h1 className='text-2xl font-extrabold w-[100%]'>التدوين وكتابة المقالات</h1>
+            <h2 className='mt-3 font-bold text-justify w-[80%]'>
                 تدوين وكتابة مقالات قصيرة تدريبية لتغطية مختلف المهارات والمجالات البرمجية
             </h2>
         </Link>
 
-        <Link href="https://youtube.com/@YouthGuide4U?feature=shared" target="_blank" className='flex leading-[1] flex-col gap-5 justify-center min-h-[350px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
+        <Link href="https://youtube.com/@YouthGuide4U?feature=shared" target="_blank" className='flex leading-[1] flex-col gap-5 justify-center min-h-[380px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
                         hover:bg-white duration-150 hover:text-greenPrime border-2 border-greenPrime hover:from-white hover:to-white text-white'>
-            <ImVideoCamera className='text-7xl hover:text-greenPrime' />
-            <h1 className='text-3xl font-extrabold'>
+            <GiClapperboard className='text-8xl hover:text-greenPrime' />
+            <h1 className='text-2xl font-extrabold'>
                 إنتاج الفيديوهات
             </h1>
-            <h2 className='mt-3 font-bold w-[50%]'>
+            <h2 className='mt-3 font-bold text-justify w-[80%]'>
                 تسجيل الفيدويهات المجانية في مختلف المجالات بشكل مجاني
             </h2>
         </Link>
 
-        <Link href={'/our-services/road-map'} className='flex leading-[1] flex-col gap-5 justify-center min-h-[350px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
+        <Link href={'/our-services/road-map'} className='flex leading-[1] flex-col gap-5 justify-center min-h-[380px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
                         hover:bg-white duration-150 hover:text-greenPrime border-2 border-greenPrime hover:from-white hover:to-white text-white'>
-            <FaLocationDot className='text-7xl hover:text-greenPrime' />
-            <h1 className='text-3xl font-extrabold'>
+            <GrMapLocation className='text-8xl hover:text-greenPrime' />
+            <h1 className='text-2xl font-extrabold'>
                 تقديم خارطة الطريق
             </h1>
-            <h2 className='mt-3 font-bold w-[80%]'>
+            <h2 className='mt-3 font-bold text-justify w-[80%]'>
                 تقديم خارطة الطريق الصحيح لأكثر من 50 مجال تريد تعلمه كم خلال
                 الاعتماد على تقنية الذكاء الصنعي
             </h2>
         </Link >
-        <Link href={'/our-services/courses'} className='flex leading-[1] flex-col gap-5 justify-center min-h-[350px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
+        <div href={'/our-services/courses'} className='flex leading-[1] flex-col gap-5 justify-center min-h-[380px] items-center  rounded-3xl py-8 px-5 bg-gradient-to-l from-greenPrime to-bluePrime
                         hover:bg-white duration-150 hover:text-greenPrime border-2 border-greenPrime hover:from-white hover:to-white text-white'>
-            <FaLocationDot className='text-7xl hover:text-greenPrime' />
-            <h1 className='text-3xl font-extrabold'>
+            <BiBookBookmark className='text-8xl hover:text-greenPrime' />
+            <h1 className='text-2xl font-extrabold'>
                     التدريب المباشر
             </h1>
-            <h2 className='mt-3 font-bold w-[60%] text-red-600 text-center'>
+            <h2 className='mt-3 font-bold text-center w-[80%] text-red-600 '>
                 IN PROGRESS
             </h2>
-        </Link >
+        </div >
 
 </div>
 </div>
