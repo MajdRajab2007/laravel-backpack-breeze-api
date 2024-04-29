@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\NormalUser;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
@@ -31,7 +32,7 @@ class RegisteredUserController extends Controller
             'date' => ['required', 'string', 'max:255'],
         ]);
 
-        $user = User::create($incomingFields);
+        $user = NormalUser::create($incomingFields);
 
         event(new Registered($user));
 

@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\NormalUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 class ProfileController extends Controller
@@ -23,7 +24,7 @@ class ProfileController extends Controller
     public function editUser(Request $request)
     {
         // Retrieve the authenticated user
-        $user = User::where('email', $request->email)->first();
+        $user = NormalUser::where('email', $request->email)->first();
 
         // Validate the incoming request
         $request->validate([
@@ -99,7 +100,7 @@ class ProfileController extends Controller
     }
 
     public function read(Request $request){
-        $user = User::where('email',$request->email)->get()->first();
+        $user = NormalUser::where('email',$request->email)->get()->first();
         $array = $user['read_articles'];
         $array[0] = '';
         $input = $request->input;

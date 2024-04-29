@@ -8,10 +8,16 @@
 </head>
 
 <body>
-    <form method='POST' action='http://localhost:8000/api/users/info/test@example.com' enctype="multipart/form-data">
-        @method('PUT')
-        <input type="text" name="about">
-        <button type="submit" className='p-8 bg-black text-white'>Register</button>
+    <form method='POST' action='http://localhost:8000/register' enctype="multipart/form-data">
+        <input type="text" name="email" id="">
+        <input type="text" name="name" id="">
+        <input type="text" name="lName" id="">
+        <input type="text" name="password" id="">
+        <input type="text" name="gender" id="">
+        <input type="text" name="status" id="">
+        <input type="date" name="date" id="">
+        <button>Submit</button>
+
     </form>
 </body>
 

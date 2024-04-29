@@ -10,3 +10,4 @@
 <x-backpack::menu-item title="Tags" icon="la la-question" :link="backpack_url('tag')" />
 <x-backpack::menu-item title="Teams" icon="la la-question" :link="backpack_url('team')" />
 <x-backpack::menu-item title="Users" icon="la la-question" :link="backpack_url('user')" />
+<x-backpack::menu-item title="Scheduled posts" icon="la la-question" :link="backpack_url('scheduled-posts')" />
