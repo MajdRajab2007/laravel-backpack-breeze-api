@@ -15,7 +15,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 class ProfileController extends Controller
 {
-    
+
     /**
      * Display the user's profile form.
      */
@@ -103,10 +103,10 @@ class ProfileController extends Controller
         $user = NormalUser::where('email',$request->email)->get()->first();
         $array = $user['read_articles'];
         $array[0] = '';
-        $input = $request->input;
-        // var_dump($input);
+        $input = $request->json()->all();        // var_dump($input);
         array_push($array,$input);
-        $user->read_articles = $array; 
+        $user->read_articles = $array;
         $user->save();
+        // dd($input);
     }
 }

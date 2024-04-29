@@ -25,7 +25,8 @@ use Illuminate\Auth\Events\Registered;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+Route::put('/users/image/{email}',[ProfileController::class,'editUser']);
+Route::put('/users/info/{email}',[ProfileController::class,'edit']);
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -85,6 +86,7 @@ Route::get('posts/tag_design/{tag_name}/{design_type}/{id}',[PostsController::cl
 
 //self roadmap routes
 Route::get('self-roadmap/',[RoadmapController::class,'show']);
+Route::get('self-roadmap/{id}',[RoadmapController::class,'showById']);
 Route::get('self-roadmap/search/{search}',[RoadmapController::class,'search']);
 Route::get('self-roadmap/tag/{tag_name}',[RoadmapController::class,'showByTag']);
 Route::get('self-roadmap/tag/{tag}/{id}',[RoadmapController::class,'showByTagId']);

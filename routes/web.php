@@ -13,11 +13,16 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::put('/users/image/{email}',[ProfileController::class,'editUser']);
 Route::get('/', function () {
     return view('app');
 }
 );
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->name('register');
+
+
+Route::post('/login', [AuthenticatedSessionController::class, 'store'])
+                ->middleware('guest')
+                ->name('login');
 require __DIR__.'/auth.php';
