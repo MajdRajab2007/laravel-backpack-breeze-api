@@ -32,7 +32,7 @@ class RegisteredUserController extends Controller
             'date' => ['required', 'string', 'max:255'],
         ]);
 
-        $user = NormalUser::create($incomingFields);
+        $user = User::create($incomingFields);
 
         event(new Registered($user));
 

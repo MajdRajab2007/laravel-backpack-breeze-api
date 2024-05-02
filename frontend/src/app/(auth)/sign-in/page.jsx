@@ -19,6 +19,11 @@ const Login = () => {
         // //(email)
 
       };
+
+      const handleEmailChange = (e) => {
+        setEmail(e.target.value)
+        console.log(email)
+      };
   return (
     <div className={`${style.authContainer}  h-[100vh] flex justify-center items-start`}>
 
@@ -33,7 +38,7 @@ const Login = () => {
                      <div className=" md:flex-row gap-5 justify-center items-center text-black text-xl font-bold">
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label htmlFor="email">البريد الإلكتروني</label>
-                            <input onChange={(e) => setEmail(e.target.value)} required className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="email" name="email" />
+                            <input onChange={(e) => handleEmailChange(e)} required className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="email" name="email" />
                         </div>
                         <div className="flex flex-col mt-5 justify-center items-start gap-2">
                             <label htmlFor="password">كلمة السر</label>
@@ -45,7 +50,7 @@ const Login = () => {
                         </div>
                      </div>
 
-                     <input onClick={() => dispatch(fetchUserData(email))} type="submit" className="mt-5 font-bold mx-auto bg-greenPrime border-greenPrime border-2 rounded-3xl py-2 px-5 text-white" value='تسجيل الدخول'  />
+                     <input onClick={() => (fetchUserData(email))} type="submit" className="mt-5 font-bold mx-auto bg-greenPrime border-greenPrime border-2 rounded-3xl py-2 px-5 text-white" value='تسجيل الدخول'  />
                         <div className="flex flex-col gap-x-2 justify-center items-center">
                                 لا تمتلك حساب؟ يمكنك <Link href={'/sign-up'} className="font-bold">تسجيل حساب جديد</Link>
                         </div>

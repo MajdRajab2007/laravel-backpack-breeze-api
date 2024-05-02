@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('lName')->nullable();
             $table->string('gender')->nullable();
+            $table->boolean('is_admin')->default(false);
             $table->string('status')->nullable();
             $table->string('image')->nullable();
             $table->string('about')->nullable();
