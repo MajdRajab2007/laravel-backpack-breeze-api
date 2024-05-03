@@ -19,7 +19,7 @@ class ProfileController extends Controller
     /**
      * Display the user's profile form.
      */
-    
+
 
     public function editUser(Request $request)
     {
@@ -100,7 +100,7 @@ class ProfileController extends Controller
     }
 
     public function read(Request $request){
-        $user = NormalUser::where('email',$request->email)->get()->first();
+        $user = User::where('email',$request->email)->get()->first();
         $array = $user['read_articles'];
         $array[0] = '';
         $input = $request->json()->all();        // var_dump($input);

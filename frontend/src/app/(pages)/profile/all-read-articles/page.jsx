@@ -25,9 +25,7 @@ const Profile = () => {
 
     let articlesArray = profileData && profileData.data && profileData.data.read_articles || [""];
     articlesArray.splice(0, 1);
-    if (articlesArray !== null) {
-        articlesArray.length = 4;
-    }
+
 
     return (
         <div className='py-6 dark:bg-darkbg min-h-[600px]'>
@@ -38,10 +36,10 @@ const Profile = () => {
             <div className='grid grid-cols-2 md:grid-cols-4 gap-6 mt-4 px-8 '>
                 {articlesArray.length > 0 ? (
                     articlesArray.map((item) => (
-                        <div key={item?.body?.id} className='border-2 border-greenPrime dark:border-white'>
-                            <div className='bg-greenPrime font-bold py-2 px-4 text-center text-white'>{item?.body?.title}</div>
+                        <div key={item?.id} className='border-2 border-greenPrime dark:border-white'>
+                            <div className='bg-greenPrime font-bold py-2 px-4 text-center text-white'>{item?.title}</div>
                             <div className='text-4xl text-center p-[32px]  dark:text-white'>+7</div>
-                            <Link href={`/lessons/${item?.body?.tag_name}/${item?.body?.id}`} className='bg-greenPrime w-[80%] m-auto flex justify-center items-center'>
+                            <Link href={`/lessons/${item?.tag_name}/${item?.id}`} className='bg-greenPrime w-[80%] m-auto flex justify-center items-center'>
                                 <FaArrowAltCircleRight className='text-2xl text-white'/>
                             </Link>
                         </div>

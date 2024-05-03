@@ -12,17 +12,12 @@ const ReadArticle = ({ body, email, tag, id }) => {
   const dispatch = useDispatch();
 
   // Use useEffect hook to execute code after component mount
-  useEffect(() => {
-    // Check if the component is running on the client side
-    if (typeof window !== 'undefined') {
-      // Retrieve user data from sessionStorage
-      const storedUserData = sessionStorage.getItem('userData');
-      // Parse stored user data
-      const userInfo = storedUserData ? storedUserData : null;
-      // Log user info for debugging
-    //   //(userInfo);
-    }
-  }, []); // Empty dependency array ensures this effect runs only once after component mount
+  let userEmail = null;
+
+  if (typeof window !== 'undefined') {
+      let emailItem = sessionStorage.getItem('userEmail');
+      userEmail = emailItem;
+  }
 
   // Render the component
   return (
@@ -30,18 +25,13 @@ const ReadArticle = ({ body, email, tag, id }) => {
       // Check if the component is running on the client side
       if (typeof window !== 'undefined') {
         // Retrieve user data from sessionStorage
-        const storedUserData = sessionStorage.getItem('userData');
         // Parse stored user data
-        const userInfo = storedUserData ? JSON.parse(storedUserData) : null;
         // Check if user info and email exist
-        if (userInfo && userInfo.data.email) {
+
           // Dispatch addUserData action with email and body
-          dispatch(addUserData({ email: userInfo.data.email, newData: { body: body } }));
-          dispatch(fetchUserData(userInfo.data.email));
-        } else {
-          // Log error if user email not found
-          console.error('User email not found in sessionStorage');
-        }
+          dispatch(addUserData({ email: userEmail, newData: body }));
+        //   dispatch(fetchUserData(userEmail));
+
       }
     }}>
       <TiArrowRightThick  className='text-4xl text-white'/>

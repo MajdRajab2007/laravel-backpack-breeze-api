@@ -17,11 +17,11 @@ const AllContent = async() => {
 
          {data.map((lesson) => {
             return (
-                <div  key={lesson.id} className='flex flex-col justify-center border-2 bg-white border-bluePrime rounded-2xl  items-center gap-5 w-[70%] mx-auto'>
+                <div  key={lesson.id} className='flex flex-col justify-center border-2 bg-white border-bluePrime rounded-2xl  items-center gap-5 lg:w-[80%] w-[100%] mx-auto'>
                         <div className='py-2 px-4 border-b-2 border-bluePrime'>
                         <Image  src={`http://localhost:8000/storage/${lesson.image}`} alt='lesson' width={150} height={350} />
                         </div>
-                <div className='dark:text-white flex flex-col justify-center items-center'>
+                <div className=' flex flex-col justify-center items-center'>
                     <h1 className='text-3xl font-bold  text-center py-2 px-6 border-r-2 border-l-2 border-bluePrime rounded-2xl'>
                         {lesson.title}
                     </h1>
