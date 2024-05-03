@@ -20,7 +20,10 @@ const Register = () => {
             <div className="w-[80%] relative top-[15%] md:top-[10%] md:right-[1%]">
             <form className="flex flex-col gap-5 justify-center items-center
                               border-2   border-bluePrime
-                             rounded-2xl py-5 px-8" style={{backgroundColor:"#07afc947"}} method="POST" action="http://localhost:8000/register">
+                             rounded-2xl py-5 px-8" style={{backgroundColor:"#07afc947"}} method="POST" action="http://localhost:8000/register" onSubmit={() => {
+                                sessionStorage.setItem("userEmail", email)
+                                // fetchUserData(email)
+                             }}>
 
                     <h1 className="text-3xl font-bold ">تسجيل حساب جديد</h1>
 
@@ -78,7 +81,10 @@ const Register = () => {
                         </div>
                      </div>
 
-                     <input type="submit" onClick={() => dispatch(fetchUserData(email))} className="mt-5 font-bold mx-auto bg-greenPrime border-greenPrime border-2 rounded-3xl py-2 px-5 text-white" value='تسجيل حساب جديد'  />
+                     <input type="submit" onClick={() => {
+                        sessionStorage.setItem("userData", "")
+                        dispatch(fetchUserData(email))
+                     }} className="mt-5 font-bold mx-auto bg-greenPrime border-greenPrime border-2 rounded-3xl py-2 px-5 text-white" value='تسجيل حساب جديد'  />
                         <div className="flex gap-x-2">
                                 هل تملك حساب؟ يمكنك <Link href={'/sign-in'} className="font-bold">تسجيل الدخول</Link>
                         </div>

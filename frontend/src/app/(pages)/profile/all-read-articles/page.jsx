@@ -1,23 +1,33 @@
 "use client"
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import Loading from '@/app/loading';
 
 const Profile = () => {
-    let userData = null;
+    let userEmail = null;
 
-    // Check if window is defined (running in the browser)
     if (typeof window !== 'undefined') {
-        let user = sessionStorage.getItem('userData');
-        userData = JSON.parse(user);
+        let emailItem = sessionStorage.getItem('userEmail');
+        userEmail = emailItem;
     }
 
-    const name = userData && userData.data && userData.data.name || "loading";
-    const email = userData && userData.data && userData.data.email || "loading";
-    let articlesArray = userData && userData.data && userData.data.read_articles || [];
+    let [profileData, setProfileData] = useState("")
+    useEffect(() => {
+        fetch(`http://localhost:8000/api/users/${userEmail}`)
+        .then((res) => res.json())
+        .then((data) => {
+            setProfileData(data)
+            console.log(data)
+        })
+    }, [userEmail])
+
+    let articlesArray = profileData && profileData.data && profileData.data.read_articles || [""];
     articlesArray.splice(0, 1);
+    if (articlesArray !== null) {
+        articlesArray.length = 4;
+    }
 
     return (
         <div className='py-6 dark:bg-darkbg min-h-[600px]'>

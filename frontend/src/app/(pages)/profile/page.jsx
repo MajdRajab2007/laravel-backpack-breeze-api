@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import background from "./images/backgroundForProfilePage.png";
@@ -13,27 +13,49 @@ import { useDispatch } from 'react-redux';
 import { fetchUserData } from '../../../../lib/features/users/users';
 
 export default function Profile() {
-    // User data
-    let userData = null;
 
-    // Check if window is defined (running in the browser)
+    let userEmail = null;
+
     if (typeof window !== 'undefined') {
-        let user = sessionStorage.getItem('userData');
-        userData = JSON.parse(user);
+        let emailItem = sessionStorage.getItem('userEmail');
+        userEmail = emailItem;
     }
 
-    const name = userData && userData.data && userData.data.name;
-    let articlesArray = userData && userData.data && userData.data.read_articles || ["", "", "", ""];
+    let [profileData, setProfileData] = useState("")
+    useEffect(() => {
+        fetch(`http://localhost:8000/api/users/${userEmail}`)
+        .then((res) => res.json())
+        .then((data) => {
+            setProfileData(data)
+            console.log(data)
+        })
+    }, [userEmail])
+
+
+
+
+
+    // User data
+    // let userData = null;
+
+    // // Check if window is defined (running in the browser)
+    // if (typeof window !== 'undefined') {
+    //     let user = sessionStorage.getItem('userData');
+    //     userData = JSON.parse(user);
+    // }
+
+    const name = profileData && profileData.data && profileData.data.name;
+    let articlesArray = profileData && profileData.data && profileData.data.read_articles || [""];
     articlesArray.splice(0, 1);
     if (articlesArray !== null) {
         articlesArray.length = 4;
     }
 
     let dispatch = useDispatch();
-    const email = userData && userData.data && userData.data.email || "loading";
+    const email = profileData && profileData.data && profileData.data.email || "loading";
     // Update the Image
     let [image, setImage] = useState('');
-    const imageProfile = userData && userData.data && userData.data.image || null;
+    const imageProfile = profileData && profileData.data && profileData.data.image || null;
 
     // Update the Bio
     let [updateBio, setUpdateBio] = useState(false);
@@ -50,7 +72,7 @@ export default function Profile() {
         }).then((res) => dispatch(fetchUserData(email)));
     };
 
-    const about = userData && userData.data && userData.data.about || "loading";
+    const about = profileData && profileData.data && profileData.data.about || "loading";
 
     return (
         <>
