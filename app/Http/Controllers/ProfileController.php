@@ -24,7 +24,7 @@ class ProfileController extends Controller
     public function editUser(Request $request)
     {
         // Retrieve the authenticated user
-        $user = NormalUser::where('email', $request->email)->first();
+        $user = User::where('email', $request->email)->first();
 
         // Validate the incoming request
         $request->validate([
