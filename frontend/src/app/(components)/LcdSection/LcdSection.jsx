@@ -14,7 +14,7 @@ const LcdSection = () => {
             <h1 className='font-extrabold text-6xl text-bluePrime' style={{marginLeft:"54px"}}>Create</h1>
             <h1 className='font-extrabold text-6xl text-bluePrime' style={{marginLeft:"108px"}}>Develop</h1>
 
-                <Link href={'/register'} className='w-[70%] border-2 border-bluePrime hover:bg-white hover:text-bluePrime duration-150 font-bold bg-gradient-to-l from-bluePrime to-greenPrime hover:from-white hover:to-white rounded-full text-center text-white mx-auto mt-3 px-8 py-4 text-4xl'>
+                <Link href={'/sign-up'} className='w-[70%] border-2 border-bluePrime hover:bg-white hover:text-bluePrime duration-150 font-bold bg-gradient-to-l from-bluePrime to-greenPrime hover:from-white hover:to-white rounded-full text-center text-white mx-auto mt-3 px-8 py-4 text-4xl'>
                     سجل الآن
                 </Link>
         </div>

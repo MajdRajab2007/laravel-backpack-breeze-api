@@ -8,6 +8,10 @@ import Link from "next/link"
 import { FaEye, FaEyeDropper, FaEyeSlash } from "react-icons/fa6"
 import { RiEyeCloseFill, RiEyeCloseLine } from "react-icons/ri"
 
+// export const metadata = {
+//     title: "تسجيل حساب جديد - دليل الشباب"
+// }
+
 const Register = () => {
     let dispatch = useDispatch()
     let [email, setEmail] = useState('')
