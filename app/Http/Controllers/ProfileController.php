@@ -50,10 +50,7 @@ class ProfileController extends Controller
         $user->save();
 
         // Return a response indicating success
-        return response()->json([
-            'status' => true,
-            'message' => 'User updated successfully.',
-        ]);
+      return redirect(env('FRONTEND_URL'). "/profile"); 
     }
 
     // /**
