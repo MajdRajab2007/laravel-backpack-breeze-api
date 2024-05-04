@@ -6,10 +6,7 @@ import { fetchUserData } from "../../../../lib/features/users/users";
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
-// export const metadata = {
-//     title: "تسجيل الدخول - دليل الشباب"
-// }
-
+// 
 
 const Login = () => {
     let dispatch = useDispatch()

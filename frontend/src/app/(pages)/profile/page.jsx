@@ -48,7 +48,7 @@ export default function Profile() {
     let articlesArray = profileData && profileData.data && profileData.data.read_articles || [""];
     articlesArray.splice(0, 1);
     if (articlesArray !== null) {
-        articlesArray.length = 4;
+        articlesArray.length = 5;
     }
 
     let dispatch = useDispatch();
@@ -69,10 +69,10 @@ export default function Profile() {
             body: JSON.stringify({
                 about: bio
             }),
-        }).then((res) => dispatch(fetchUserData(email)));
+        }).then((res) => window.location.reload());
     };
 
-    const about = profileData && profileData.data && profileData.data.about || "loading";
+    const about = profileData && profileData.data && profileData.data.about || "لا يوجد وصف";
 
     return (
         <>
