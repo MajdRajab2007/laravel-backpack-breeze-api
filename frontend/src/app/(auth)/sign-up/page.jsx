@@ -45,7 +45,7 @@ const Register = () => {
                      <div className="flex flex-col md:flex-row gap-5 justify-center items-center text-black text-xl font-bold">
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label htmlFor="email">البريد الإلكتروني</label>
-                            <input required onClick={(e) => setEmail(e.target.value)} className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="email" name="email" />
+                            <input required onChange={(e) => setEmail(e.target.value)} className="border-2 border-bluePrime rounded-md focus:border-white" type="text" id="email" name="email" />
                         </div>
                         <div className="flex flex-col justify-center items-start gap-2">
                             <label htmlFor="password">كلمة السر</label>
@@ -85,10 +85,7 @@ const Register = () => {
                         </div>
                      </div>
 
-                     <input type="submit" onClick={() => {
-                        sessionStorage.setItem("userData", "")
-                        dispatch(fetchUserData(email))
-                     }} className="mt-5 font-bold mx-auto bg-greenPrime border-greenPrime border-2 rounded-3xl py-2 px-5 text-white" value='تسجيل حساب جديد'  />
+                     <input type="submit"  className="mt-5 font-bold mx-auto bg-greenPrime border-greenPrime border-2 rounded-3xl py-2 px-5 text-white" value='تسجيل حساب جديد'  />
                         <div className="flex gap-x-2">
                                 هل تملك حساب؟ يمكنك <Link href={'/sign-in'} className="font-bold">تسجيل الدخول</Link>
                         </div>
