@@ -4,7 +4,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchUserData = createAsyncThunk(
   'usersSlice/fetchUserData',
   async (email) => {
-    const response = await fetch(`http://localhost:8000/api/users/${email}`);
+    const response = await fetch(`https://api.yg.youth-guide.com/api/users/${email}`);
     if (!response.ok) {
       throw new Error('Failed to fetch user data');
     }
@@ -17,7 +17,7 @@ export const fetchUserData = createAsyncThunk(
 export const addUserData = createAsyncThunk(
   'usersSlice/addUserData',
   async ({ email, newData }) => {
-    const response = await fetch(`http://localhost:8000/api/users/read/${email}/`, {
+    const response = await fetch(`https://api.yg.youth-guide.com/api/users/read/${email}/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

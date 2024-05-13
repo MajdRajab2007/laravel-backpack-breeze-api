@@ -9,7 +9,7 @@ const SearchBar = () => {
 
     let handleFetch = async (e) => {
         e.preventDefault()
-        let req = await fetch(`http://localhost:8000/api/self-roadmap/search/${serach}`)
+        let req = await fetch(`https://api.yg.youth-guide.com/api/self-roadmap/search/${serach}`)
         let res = await req.json()
         //(res)
         setData(res)

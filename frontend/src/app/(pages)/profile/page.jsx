@@ -23,7 +23,7 @@ export default function Profile() {
 
     let [profileData, setProfileData] = useState("")
     useEffect(() => {
-        fetch(`http://localhost:8000/api/users/${userEmail}`)
+        fetch(`https://api.yg.youth-guide.com/api/users/${userEmail}`)
         .then((res) => res.json())
         .then((data) => {
             setProfileData(data)
@@ -61,7 +61,7 @@ export default function Profile() {
     let [updateBio, setUpdateBio] = useState(false);
     let [bio, setBio] = useState("");
     let handleBio = () => {
-        fetch(`http://localhost:8000/api/users/info/${email}`, {
+        fetch(`https://api.yg.youth-guide.com/api/users/info/${email}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -105,7 +105,7 @@ export default function Profile() {
                     </div>
 
                     <div className='flex flex-col gap-8 justify-center items-center relative bottom-0 md:bottom-[150px] w-[100%]'>
-                        <form onSubmit={() => dispatch(fetchUserData(email))} action={`http://localhost:8000/api/users/image/${email}`} method='POST' enctype="multipart/form-data" className='absolute left-[5999%]'>
+                        <form onSubmit={() => dispatch(fetchUserData(email))} action={`https://api.yg.youth-guide.com/api/users/image/${email}`} method='POST' enctype="multipart/form-data" className='absolute left-[5999%]'>
                             <input type="hidden" name="_method" value="PUT"/>
                             <input id='image' onChange={(e) => {
                                 setImage(e.target.files[0]);
@@ -115,7 +115,7 @@ export default function Profile() {
 
                         <div className='bottom-[-30px] relative'>
                             <label htmlFor="image" className='text-7xl w-[50px] h-[50px] bg-greenPrime rounded-full flex justify-center items-center cursor-pointer  font-bold text-white top-[70%] absolute'>+</label>
-                            <Image priority src={imageProfile !== null ? `http://localhost:8000/storage/storage/${imageProfile}` : prof}  width={250} height={250} className='h-[250px] rounded-full border-2 border-greenPrime' alt='profile' />
+                            <Image priority src={imageProfile !== null ? `https://api.yg.youth-guide.com/storage/storage/${imageProfile}` : prof}  width={250} height={250} className='h-[250px] rounded-full border-2 border-greenPrime' alt='profile' />
                         </div>
 
                         {image && <div className='flex flex-col mt-6 gap-5'>

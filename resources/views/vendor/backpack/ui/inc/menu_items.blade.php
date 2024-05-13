@@ -11,3 +11,5 @@
 <x-backpack::menu-item title="Teams" icon="la la-question" :link="backpack_url('team')" />
 <x-backpack::menu-item title="Users" icon="la la-question" :link="backpack_url('user')" />
 <x-backpack::menu-item title="Scheduled posts" icon="la la-question" :link="backpack_url('scheduled-posts')" />
+<x-backpack::menu-item title="Voms" icon="la la-question" :link="backpack_url('vom')" />
+<x-backpack::menu-item title="Foms" icon="la la-question" :link="backpack_url('fom')" />
