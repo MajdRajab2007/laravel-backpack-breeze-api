@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
             'email' => 'test2@example.com',
             'password' => '123412341234'
         ]);
-        // \App\Models\User::factory()->create([
-        //    'name' => 'Test User',
-        //    'email' => 'admin@example.com',
-        //    'password' => '123412341234',
-        //    'is_admin' => true
-        //]);
-        
+        \App\Models\User::factory()->create([
+           'name' => 'Test User',
+           'email' => 'admin@example.com',
+           'password' => '123412341234',
+           'is_admin' => true
+        ]);
+
     }
 }
