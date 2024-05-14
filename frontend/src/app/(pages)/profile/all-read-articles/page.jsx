@@ -15,7 +15,7 @@ const Profile = () => {
 
     let [profileData, setProfileData] = useState("")
     useEffect(() => {
-        fetch(`http://localhost:8000/api/users/${userEmail}`)
+        fetch(`https://api.yg.youth-guide.com/api/users/${userEmail}`)
         .then((res) => res.json())
         .then((data) => {
             setProfileData(data)

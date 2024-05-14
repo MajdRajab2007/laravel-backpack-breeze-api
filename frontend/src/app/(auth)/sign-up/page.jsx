@@ -24,7 +24,7 @@ const Register = () => {
             <div className="w-[80%] relative top-[15%] md:top-[10%] md:right-[1%]">
             <form className="flex flex-col gap-5 justify-center items-center
                               border-2   border-bluePrime
-                             rounded-2xl py-5 px-8" style={{backgroundColor:"#07afc947"}} method="POST" action="http://localhost:8000/register" onSubmit={() => {
+                             rounded-2xl py-5 px-8" style={{backgroundColor:"#07afc947"}} method="POST" action="https://api.yg.youth-guide.com/register" onSubmit={() => {
                                 sessionStorage.setItem("userEmail", email)
                                 // fetchUserData(email)
                              }}>

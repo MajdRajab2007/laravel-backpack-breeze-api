@@ -12,6 +12,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VolunteerController;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 
@@ -90,3 +91,7 @@ Route::get('self-roadmap/{id}',[RoadmapController::class,'showById']);
 Route::get('self-roadmap/search/{search}',[RoadmapController::class,'search']);
 Route::get('self-roadmap/tag/{tag_name}',[RoadmapController::class,'showByTag']);
 Route::get('self-roadmap/tag/{tag}/{id}',[RoadmapController::class,'showByTagId']);
+
+//Volunteer of the month routes
+Route::get('vof/',[VolunteerController::class,'male']);
+Route::get('fom/',[VolunteerController::class,'female']);

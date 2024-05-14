@@ -29,7 +29,7 @@ const Login = () => {
     <div className={`${style.authContainer}  h-[100vh] flex justify-center items-start`}>
 
             <div className="w-[80%] md:w-[50%] relative top-[15%] md:top-[10%] md:right-[1%]">
-            <form action="http://localhost:8000/login" method="POST"
+            <form action="https://api.yg.youth-guide.com/login" method="POST"
                     className="flex flex-col gap-5 justify-center items-center
                               border-2   border-bluePrime
                              rounded-2xl py-5 px-8" style={{backgroundColor:"#07afc947"}}
